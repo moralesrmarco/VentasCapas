@@ -70,6 +70,18 @@
     <Compile Include="PresentationLayer\FrmMantenimientoClienteBuscarCliente.Designer.cs">
       <DependentUpon>FrmMantenimientoClienteBuscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\FrmProcesoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmProcesoVenta.Designer.cs">
+      <DependentUpon>FrmProcesoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmProcesoVentaBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmProcesoVentaBusquedaProducto.Designer.cs">
+      <DependentUpon>FrmProcesoVentaBusquedaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Validator.cs" />
@@ -78,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmMantenimientoClienteBuscarCliente.resx">
       <DependentUpon>FrmMantenimientoClienteBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmProcesoVenta.resx">
+      <DependentUpon>FrmProcesoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmProcesoVentaBusquedaProducto.resx">
+      <DependentUpon>FrmProcesoVentaBusquedaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

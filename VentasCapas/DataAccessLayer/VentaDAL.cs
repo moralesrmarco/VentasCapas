@@ -38,7 +38,7 @@ namespace VentasCapas.DataAccessLayer
                 cmd2.Parameters.Add(new SqlParameter("@id_venta", SqlDbType.Int));
                 cmd2.Parameters.Add(new SqlParameter("@id_producto", SqlDbType.Int));
                 cmd2.Parameters.Add(new SqlParameter("@cantidad", SqlDbType.Int));
-                cmd2.Parameters.Add(new SqlParameter("", SqlDbType.Money));
+                cmd2.Parameters.Add(new SqlParameter("@precio_unitario", SqlDbType.Money));
 
                 objTransac = con.BeginTransaction();
                 cmd1.Transaction = objTransac;

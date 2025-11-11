@@ -40,8 +40,8 @@ namespace VentasCapas.PresentationLayer
         private void btnLimpiarTxt_Click(object sender, EventArgs e)
         {
             txtEntidad.Text = "";
+            dgvLista.Rows.Clear();
             txtEntidad.Focus();
-            BuscarClientesPorEntidad();
         }
 
         private void BuscarClientesPorEntidad()

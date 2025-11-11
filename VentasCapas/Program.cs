@@ -18,7 +18,8 @@ namespace VentasCapas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMantenimientoCliente());
+            //Application.Run(new FrmMantenimientoCliente());
+            Application.Run(new FrmProcesoVenta());
         }
     }
 }

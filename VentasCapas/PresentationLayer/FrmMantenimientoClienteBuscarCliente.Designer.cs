@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEntidad = new System.Windows.Forms.TextBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.btnLimpiarTxt = new System.Windows.Forms.Button();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLimpiarTxt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             // 
             this.dgvLista.AllowUserToAddRows = false;
             this.dgvLista.AllowUserToDeleteRows = false;
+            this.dgvLista.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.item,
@@ -76,13 +77,25 @@
             this.dgvLista.TabIndex = 2;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             // 
+            // btnLimpiarTxt
+            // 
+            this.btnLimpiarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTxt.Location = new System.Drawing.Point(717, 24);
+            this.btnLimpiarTxt.Name = "btnLimpiarTxt";
+            this.btnLimpiarTxt.Size = new System.Drawing.Size(40, 34);
+            this.btnLimpiarTxt.TabIndex = 3;
+            this.btnLimpiarTxt.Text = "X";
+            this.btnLimpiarTxt.UseVisualStyleBackColor = true;
+            this.btnLimpiarTxt.Click += new System.EventHandler(this.btnLimpiarTxt_Click);
+            // 
             // item
             // 
+            this.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.item.HeaderText = " #";
             this.item.MinimumWidth = 6;
             this.item.Name = "item";
             this.item.ReadOnly = true;
-            this.item.Width = 125;
+            this.item.Width = 46;
             // 
             // entidad
             // 
@@ -94,29 +107,21 @@
             // 
             // ruc
             // 
+            this.ruc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ruc.HeaderText = "RUC";
             this.ruc.MinimumWidth = 6;
             this.ruc.Name = "ruc";
             this.ruc.ReadOnly = true;
-            this.ruc.Width = 125;
+            this.ruc.Width = 65;
             // 
             // idCliente
             // 
+            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.idCliente.HeaderText = "idCliente";
             this.idCliente.MinimumWidth = 6;
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
-            this.idCliente.Width = 125;
-            // 
-            // btnLimpiarTxt
-            // 
-            this.btnLimpiarTxt.Location = new System.Drawing.Point(727, 28);
-            this.btnLimpiarTxt.Name = "btnLimpiarTxt";
-            this.btnLimpiarTxt.Size = new System.Drawing.Size(40, 23);
-            this.btnLimpiarTxt.TabIndex = 3;
-            this.btnLimpiarTxt.Text = "X";
-            this.btnLimpiarTxt.UseVisualStyleBackColor = true;
-            this.btnLimpiarTxt.Click += new System.EventHandler(this.btnLimpiarTxt_Click);
+            this.idCliente.Width = 88;
             // 
             // FrmMantenimientoClienteBuscarCliente
             // 
@@ -127,9 +132,11 @@
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.txtEntidad);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMantenimientoClienteBuscarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmMantenimientoClienteBuscarCliente";
+            this.Text = "Buscar cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,10 +148,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEntidad;
         private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.Button btnLimpiarTxt;
         private System.Windows.Forms.DataGridViewTextBoxColumn item;
         private System.Windows.Forms.DataGridViewTextBoxColumn entidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
-        private System.Windows.Forms.Button btnLimpiarTxt;
     }
 }
