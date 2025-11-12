@@ -68,5 +68,15 @@ namespace VentasCapas.PresentationLayer
             txtDescripcion.Text = dgvLista.Rows[e.RowIndex].Cells["descripcion"].Value.ToString();
             txtPrecioUnitario.Text = dgvLista.Rows[e.RowIndex].Cells["precioUnitario"].Value.ToString();
         }
+
+        private void btnLimpiarTxt_Click(object sender, EventArgs e)
+        {
+            txtCadenaBusqueda.Clear();
+            txtPrecioUnitario.Clear();
+            txtIdProducto.Clear();
+            txtDescripcion.Clear();
+            nudCantidad.Value = 1;
+            dgvLista.Rows.Clear();
+        }
     }
 }

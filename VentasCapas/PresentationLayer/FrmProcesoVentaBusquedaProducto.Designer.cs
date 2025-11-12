@@ -44,6 +44,7 @@
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiarTxt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             this.txtCadenaBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCadenaBusqueda.Location = new System.Drawing.Point(160, 50);
             this.txtCadenaBusqueda.Name = "txtCadenaBusqueda";
-            this.txtCadenaBusqueda.Size = new System.Drawing.Size(532, 22);
+            this.txtCadenaBusqueda.Size = new System.Drawing.Size(480, 22);
             this.txtCadenaBusqueda.TabIndex = 1;
             this.txtCadenaBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCadenaBusqueda_KeyUp);
             // 
@@ -212,11 +213,24 @@
             this.precioUnitario.ReadOnly = true;
             this.precioUnitario.Width = 121;
             // 
+            // btnLimpiarTxt
+            // 
+            this.btnLimpiarTxt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTxt.Location = new System.Drawing.Point(640, 44);
+            this.btnLimpiarTxt.Name = "btnLimpiarTxt";
+            this.btnLimpiarTxt.Size = new System.Drawing.Size(40, 34);
+            this.btnLimpiarTxt.TabIndex = 6;
+            this.btnLimpiarTxt.Text = "X";
+            this.btnLimpiarTxt.UseVisualStyleBackColor = true;
+            this.btnLimpiarTxt.Click += new System.EventHandler(this.btnLimpiarTxt_Click);
+            // 
             // FrmProcesoVentaBusquedaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 515);
+            this.Controls.Add(this.btnLimpiarTxt);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.nudCantidad);
@@ -259,5 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
+        private System.Windows.Forms.Button btnLimpiarTxt;
     }
 }

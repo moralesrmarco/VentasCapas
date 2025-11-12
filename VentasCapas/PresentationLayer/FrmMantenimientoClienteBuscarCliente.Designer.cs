@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEntidad = new System.Windows.Forms.TextBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.btnLimpiarTxt = new System.Windows.Forms.Button();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiarTxt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,17 +77,6 @@
             this.dgvLista.TabIndex = 2;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             // 
-            // btnLimpiarTxt
-            // 
-            this.btnLimpiarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarTxt.Location = new System.Drawing.Point(717, 24);
-            this.btnLimpiarTxt.Name = "btnLimpiarTxt";
-            this.btnLimpiarTxt.Size = new System.Drawing.Size(40, 34);
-            this.btnLimpiarTxt.TabIndex = 3;
-            this.btnLimpiarTxt.Text = "X";
-            this.btnLimpiarTxt.UseVisualStyleBackColor = true;
-            this.btnLimpiarTxt.Click += new System.EventHandler(this.btnLimpiarTxt_Click);
-            // 
             // item
             // 
             this.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -122,6 +111,18 @@
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
             this.idCliente.Width = 88;
+            // 
+            // btnLimpiarTxt
+            // 
+            this.btnLimpiarTxt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTxt.Location = new System.Drawing.Point(706, 24);
+            this.btnLimpiarTxt.Name = "btnLimpiarTxt";
+            this.btnLimpiarTxt.Size = new System.Drawing.Size(40, 34);
+            this.btnLimpiarTxt.TabIndex = 3;
+            this.btnLimpiarTxt.Text = "X";
+            this.btnLimpiarTxt.UseVisualStyleBackColor = true;
+            this.btnLimpiarTxt.Click += new System.EventHandler(this.btnLimpiarTxt_Click);
             // 
             // FrmMantenimientoClienteBuscarCliente
             // 
