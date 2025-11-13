@@ -123,6 +123,7 @@ namespace VentasCapas.PresentationLayer
             txtEntidad.Text = string.Empty;
             txtIdCliente.Text = string.Empty;
             dgvLista.Rows.Clear();
+            btnNuevo.Focus();
         }
     }
 }

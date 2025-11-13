@@ -77,6 +77,7 @@ namespace VentasCapas.PresentationLayer
             txtDescripcion.Clear();
             nudCantidad.Value = 1;
             dgvLista.Rows.Clear();
+            txtCadenaBusqueda.Focus();
         }
     }
 }
