@@ -15,6 +15,9 @@ namespace VentasCapas.PresentationLayer
 {
     public partial class FrmProcesoVenta : Form
     {
+
+        private string igvIni = "18";
+
         public FrmProcesoVenta()
         {
             InitializeComponent();
@@ -92,6 +95,14 @@ namespace VentasCapas.PresentationLayer
 
                     venta.Fecha = dtpFecha.Value;
                     venta.Cliente.IdCliente = idCliente;
+                    venta.Serie = txtSerie.Text;
+                    venta.Numero = txtNumero.Text;
+                    venta.TipoComprobante = cboTipoComprobante.Text.Substring(0,1);
+
+                    decimal igv = 0;
+                    decimal.TryParse(txtIGV.Text, out igv);
+                    venta.Igv = igv/100;
+
                     foreach (DataGridViewRow row in dgvLista.Rows)
                     {
                         VentaDetalle ventaDetalle = new VentaDetalle();
@@ -122,8 +133,65 @@ namespace VentasCapas.PresentationLayer
             txtIdVenta.Text = "";
             txtEntidad.Text = string.Empty;
             txtIdCliente.Text = string.Empty;
+            dtpFecha.Value = DateTime.Today;
+            txtSerie.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            txtIGV.Text = igvIni;
+            cboTipoComprobante.SelectedIndexChanged -= cboTipoComprobante_SelectedIndexChanged;
+            cboTipoComprobante.SelectedIndex = -1;
+            cboTipoComprobante.SelectedIndexChanged += cboTipoComprobante_SelectedIndexChanged;
+            cboTipoComprobante.SelectedIndex = 0;
             dgvLista.Rows.Clear();
             btnNuevo.Focus();
+        }
+
+        private void FrmProcesoVenta_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cboTipoComprobante.SelectedIndex = 0;
+                string tipoComprobante = cboTipoComprobante.Text.Substring(0,1);
+                VentaBLL ventaBLL = new VentaBLL();
+                Venta venta = new Venta();
+                venta = ventaBLL.generarSerieNumeroComprobante(tipoComprobante);
+                txtSerie.Text = venta.Serie;
+                txtNumero.Text = venta.Numero;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso de error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void cboTipoComprobante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string tipoComprobante = cboTipoComprobante.Text.Substring(0, 1);
+                VentaBLL ventaBLL = new VentaBLL();
+                Venta venta = new Venta();
+                venta = ventaBLL.generarSerieNumeroComprobante(tipoComprobante);
+                txtSerie.Text = venta.Serie;
+                txtNumero.Text = venta.Numero;
+
+                if (tipoComprobante.CompareTo("F") == 0)
+                {
+                    lblIGV.Visible = true;
+                    txtIGV.Visible =true;
+                    txtIGV.Text = igvIni;
+                }
+                else
+                {
+                    lblIGV.Visible=false;
+                    txtIGV.Visible=false;
+                    txtIGV.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso de error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
     }
 }

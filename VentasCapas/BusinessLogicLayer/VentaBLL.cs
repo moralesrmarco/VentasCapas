@@ -25,5 +25,20 @@ namespace VentasCapas.BusinessLogicLayer
             }
         }
 
+        public Venta generarSerieNumeroComprobante(string tipoComprobante)
+        {
+            try
+            {
+                Venta venta = new Venta();
+                VentaDAL ventaDAL = new VentaDAL();
+                venta = ventaDAL.generarSerieNumeroComprobante(tipoComprobante);
+                return venta;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

@@ -40,5 +40,36 @@ namespace VentasCapas.Entities
 			set { ventaDetalles = value; }
 		}
 
+		private string serie;
+
+		public string Serie
+		{
+			get { return serie; }
+			set { serie = value; }
+		}
+
+		private string numero;
+
+		public string Numero
+		{
+			get { return numero; }
+			set { numero = value; }
+		}
+
+		private string tipoComprobante;
+
+		public string TipoComprobante
+		{
+			get { return tipoComprobante; }
+			set { tipoComprobante = value; }
+		}
+
+		private decimal igv;
+
+		public decimal Igv
+		{
+			get { return igv; }
+			set { igv = value; }
+		}
 	}
 }

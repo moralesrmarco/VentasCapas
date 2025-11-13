@@ -29,6 +29,12 @@ namespace VentasCapas.DataAccessLayer
                 cmd1.CommandType = CommandType.StoredProcedure;
                 cmd1.Parameters.Add("@fecha", SqlDbType.DateTime).Value = venta.Fecha;
                 cmd1.Parameters.Add("@id_cliente", SqlDbType.SmallInt).Value = venta.Cliente.IdCliente;
+
+                cmd1.Parameters.Add("@serie", SqlDbType.VarChar, 6).Value = venta.Serie;
+                cmd1.Parameters.Add("@numero", SqlDbType.VarChar, 6).Value = venta.Numero;
+                cmd1.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar, 1).Value = venta.TipoComprobante;
+                cmd1.Parameters.Add("@igv", SqlDbType.Decimal).Value = venta.Igv;
+
                 SqlParameter outParam = cmd1.Parameters.Add("@id_venta", SqlDbType.Int);
                 outParam.Direction = ParameterDirection.Output;
 
@@ -71,6 +77,66 @@ namespace VentasCapas.DataAccessLayer
                 }
             }
             return resp;
+        }
+
+        public Venta generarSerieNumeroComprobante(string tipoComprobante)
+        {
+            Venta venta = new Venta();
+            SqlConnection con = null;
+            try
+            {
+                con = UConnection.getConnection();
+                con.Open();
+                string sql = "sp_venta_generar_serie_numero_comprobante";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@tipo_comprobante", SqlDbType.Char, 1).Value = tipoComprobante;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        int serie = reader.GetInt32(reader.GetOrdinal("maximo_serie"));
+                        int numero = reader.GetInt32(reader.GetOrdinal("maximo_numero"));
+
+                        if (numero == 0)
+                        {
+                            serie = 1;
+                            numero = 1;
+                        }
+                        else if (numero > 999999)
+                        {
+                            serie++;
+                            numero = 1;
+                        }
+                        else
+                        {
+                            numero++;
+                        }
+                        int longitudSerie = 6;
+                        int longitudNumero = 6;
+                        string digitosCerosSerie = new string('0', longitudSerie - serie.ToString().Length);
+                        venta.Serie = digitosCerosSerie + serie.ToString();
+                        string digitosCerosNumero = new string('0', longitudNumero - numero.ToString().Length);
+                        venta.Numero = digitosCerosNumero + numero.ToString();
+                    }
+                }
+                reader.Close();
+                return venta;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
         }
     }
 }
