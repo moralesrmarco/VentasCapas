@@ -40,6 +40,7 @@
             this.etiquetaDNI = new System.Windows.Forms.ToolStripStatusLabel();
             this.etiquetaApellidosNombres = new System.Windows.Forms.ToolStripStatusLabel();
             this.etiquetaRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,14 +71,14 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
@@ -92,7 +93,7 @@
             // ventaToolStripMenuItem
             // 
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.ventaToolStripMenuItem.Text = "Venta";
             this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
             // 
@@ -104,6 +105,8 @@
             // 
             // seguridadToolStripMenuItem
             // 
+            this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarContraseñaToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
@@ -138,6 +141,13 @@
             this.etiquetaRol.Name = "etiquetaRol";
             this.etiquetaRol.Size = new System.Drawing.Size(151, 20);
             this.etiquetaRol.Text = "toolStripStatusLabel3";
+            // 
+            // cambiarContraseñaToolStripMenuItem
+            // 
+            this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
+            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // FrmMenuAdministrador
             // 
@@ -176,5 +186,6 @@
         private System.Windows.Forms.ToolStripStatusLabel etiquetaDNI;
         private System.Windows.Forms.ToolStripStatusLabel etiquetaApellidosNombres;
         private System.Windows.Forms.ToolStripStatusLabel etiquetaRol;
+        private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
     }
 }

@@ -93,5 +93,55 @@ namespace VentasCapas.DataAccessLayer
             return resp;
         }
 
+        public int cambiarClave(string claveActual, string claveNueva)
+        {
+            bool resp = false;
+            SqlConnection con = null;
+            SqlCommand cmd1;
+            SqlCommand cmd2;
+            try
+            {
+                con = UConnection.getConnection();
+                con.Open();
+                string sql = "sp_usuario_buscar_por_id";
+                cmd1 = new SqlCommand(sql, con);
+                cmd1.CommandType = CommandType.StoredProcedure;
+
+                cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = UsuarioLogueado.idUsuario;
+
+                SqlDataReader reader = cmd1.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    string claveAlmacenada = "";
+                    while (reader.Read())
+                    {
+                        claveAlmacenada = reader.GetString(reader.GetOrdinal("clave"));
+                    }
+                    resp = claveActual.Equals(claveAlmacenada);
+                }
+                reader.Close();
+                if (!resp)
+                    throw new Exception("Clave actual es erronea");
+                string sql2 = "sp_usuario_actualizar_clave";
+                cmd2 = new SqlCommand(sql2, con);
+                cmd2.CommandType = CommandType.StoredProcedure;
+
+                cmd2.Parameters.Add("@id_usuario", SqlDbType.Int).Value = UsuarioLogueado.idUsuario;
+                cmd2.Parameters.Add("@clave", SqlDbType.VarChar, 100).Value = claveNueva;
+                cmd2.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return 0;
+        }
     }
 }

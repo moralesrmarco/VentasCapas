@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using VentasCapas.DataAccessLayer;
@@ -41,6 +42,19 @@ namespace VentasCapas.BusinessLogicLayer
             }
         }
 
-
+        public int cambiarClave(string claveActual, string claveNueva)
+        {
+            try
+            {
+                int resp = 0;
+                UsuarioDAL usuarioDAL = new UsuarioDAL();
+                resp = usuarioDAL.cambiarClave(claveActual, claveNueva);
+                return resp;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

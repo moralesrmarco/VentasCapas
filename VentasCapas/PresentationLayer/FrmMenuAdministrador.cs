@@ -45,5 +45,11 @@ namespace VentasCapas.PresentationLayer
             form.MdiParent = this;
             form.Show();
         }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCambiarClave form = new FrmCambiarClave();
+            form.ShowDialog(this);
+        }
     }
 }
