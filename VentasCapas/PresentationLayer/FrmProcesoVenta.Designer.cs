@@ -55,6 +55,7 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lblIGV = new System.Windows.Forms.Label();
             this.txtIGV = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -316,6 +317,16 @@
             this.txtIGV.Size = new System.Drawing.Size(100, 22);
             this.txtIGV.TabIndex = 1;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(432, 225);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(100, 39);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // FrmProcesoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,6 +342,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnBuscarCliente);
@@ -343,8 +355,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "FrmProcesoVenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PROCESO VENTA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmProcesoVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
@@ -381,5 +393,6 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lblIGV;
         private System.Windows.Forms.TextBox txtIGV;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

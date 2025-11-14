@@ -110,6 +110,7 @@
             // 
             // txtIdUsuario
             // 
+            this.txtIdUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdUsuario.Location = new System.Drawing.Point(227, 42);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.ReadOnly = true;
@@ -118,6 +119,7 @@
             // 
             // txtApellidosNombres
             // 
+            this.txtApellidosNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellidosNombres.Location = new System.Drawing.Point(227, 86);
             this.txtApellidosNombres.Name = "txtApellidosNombres";
             this.txtApellidosNombres.ReadOnly = true;
@@ -126,6 +128,7 @@
             // 
             // txtDNI
             // 
+            this.txtDNI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDNI.Location = new System.Drawing.Point(227, 130);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.ReadOnly = true;
@@ -134,6 +137,7 @@
             // 
             // txtRol
             // 
+            this.txtRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRol.Location = new System.Drawing.Point(423, 130);
             this.txtRol.Name = "txtRol";
             this.txtRol.ReadOnly = true;
@@ -142,6 +146,7 @@
             // 
             // txtClaveActual
             // 
+            this.txtClaveActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClaveActual.Location = new System.Drawing.Point(227, 174);
             this.txtClaveActual.Name = "txtClaveActual";
             this.txtClaveActual.Size = new System.Drawing.Size(182, 22);
@@ -150,6 +155,7 @@
             // 
             // txtClaveNueva
             // 
+            this.txtClaveNueva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClaveNueva.Location = new System.Drawing.Point(227, 218);
             this.txtClaveNueva.Name = "txtClaveNueva";
             this.txtClaveNueva.Size = new System.Drawing.Size(182, 22);
@@ -158,6 +164,7 @@
             // 
             // txtRepetirClaveNueva
             // 
+            this.txtRepetirClaveNueva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRepetirClaveNueva.Location = new System.Drawing.Point(227, 262);
             this.txtRepetirClaveNueva.Name = "txtRepetirClaveNueva";
             this.txtRepetirClaveNueva.Size = new System.Drawing.Size(182, 22);

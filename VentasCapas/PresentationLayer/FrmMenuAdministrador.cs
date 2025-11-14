@@ -51,5 +51,12 @@ namespace VentasCapas.PresentationLayer
             FrmCambiarClave form = new FrmCambiarClave();
             form.ShowDialog(this);
         }
+
+        private void reporteClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteClientes form = new FrmReporteClientes();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

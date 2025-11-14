@@ -193,5 +193,33 @@ namespace VentasCapas.PresentationLayer
             }
 
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtIdVenta.Text))
+                {
+                    MessageBox.Show("Debe guardar primero la venta", "Aviso de error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                string tipoComprobante = cboTipoComprobante.Text;
+                if (tipoComprobante == "Factura")
+                {
+                    FrmReporteFactura form = new FrmReporteFactura();
+                    form.idVenta = Convert.ToInt32(txtIdVenta.Text);
+                    form.ShowDialog();
+                }
+                else
+                {
+                    // Aqui va el codigo para la boleta
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso de error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
